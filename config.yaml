@@ -1,0 +1,24 @@
+data:
+  training_file: 'fibr_gauss_48.h5'
+  training_length: 100   #
+  threshold: 8 #         
+
+training:
+  num_workers: 16 
+  gpus: "cuda:0" 
+  epochs: 1000 #
+  val_interval: 100 #
+  batch: 50 #4
+  optimizer:
+    name: 'adam'  #  adam, sgd
+    params:
+      lr: 2.5e-5 #
+      weight_decay: 0.00001 #
+  num_inference_steps: 1000
+  image_coef: 3
+
+testing:
+  shape: 48
+  length: 10
+  testing_file: 'fibr_gener_48.h5'
+

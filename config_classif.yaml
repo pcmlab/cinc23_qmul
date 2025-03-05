@@ -1,0 +1,23 @@
+data:
+  preprocessing: False
+  cases: 100
+  shape: 48
+  2d_coord_file: 'M1/Labelled_Coords_2D_Rescaling_v3_C.pts' # UAC coordinates
+  simulaions_path: '/media/CinC2023/M'
+  threshold_last_peak: 600 #      
+  labels_file: "labels.json"  # binary labels for atrial fibrillation sustainability after PVI 
+  df_file: 'df_M.h5' # dataset contained DF feature maps
+
+training:
+  num_workers: 16 
+  gpus: [1] 
+  epochs: 1000 #
+  val_interval: 100 #
+  threshold: 10
+  batch: 50 #4
+  optimizer:
+    name: 'adam'  #  adam, sgd
+    params:
+      lr: 2.5e-5 #
+      weight_decay: 0.00001 #
+
